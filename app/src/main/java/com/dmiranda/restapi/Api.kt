@@ -8,5 +8,5 @@ interface Api {
     @GET("users")
     fun getUsers(): Call<List<User>>
 
-
+    annotation class GET(val value: String)
 }

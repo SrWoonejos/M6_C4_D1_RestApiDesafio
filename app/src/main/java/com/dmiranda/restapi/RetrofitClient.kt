@@ -1,36 +1,21 @@
 package com.dmiranda.restapi
 
-class RetrofitClient {
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-    private var retrofit: Retrofit? = null
 
-    class Retrofit {
-
+object RetrofitClient {
+    fun getClient() {
     }
 
-    private val BASE_URL = ""
+    private const val BASE_URL = "URL_DE_TU_API"
 
-    fun getClient(): Retrofit  {
-        if (retrofit == null)  {
-            retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-        }
-        return retrofit as Retrofit
+    val api: Api by lazy {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        retrofit.create(Api::class.java)
     }
-
-    class GsonConverterFactory {
-        companion object {
-            fun create(): Any {
-            }
-        }
-
-    }
-
-    companion object {
-        fun getClient(): Any {
-        }
-    }
-
 }
