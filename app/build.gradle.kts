@@ -37,11 +37,18 @@ android {
 
 dependencies {
 
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.tracing:tracing-perfetto-handshake:1.0.0-rc01")
+    implementation("com.android.support.constraint:constraint-layout:1.1.3")
+    implementation("androidx.appcompat:appcompat:1.3.1")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("com.google.android.material:material:1.4.0")
+
 
     //Retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
